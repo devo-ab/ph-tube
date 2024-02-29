@@ -62,13 +62,14 @@ const fetchDataByCatagories = (categoryID, sortByView) => {
             if(video.authors[0].verified){
                 verifiedBadge = `<img class="w-6 h-6" src="./images/verify.png" alt=""></img>`
             }
+
             console.log(video)
             const newCard = document.createElement('div');
             newCard.innerHTML = `
             <div class="card w-full bg-base-100 shadow-xl">
             <figure class="overflow-hidden h-72">
                 <img class="w-full" src="${video.thumbnail}" alt="Videos" />
-                <h6 class="absolute bottom-[40%] right-12">0 hr</h6>
+                <h6 class="absolute bottom-[40%] right-12">${video.others.posted_date}</h6>
             </figure>
             <div class="card-body">
                 <div class="flex space-x-4 justify-start items-start">
